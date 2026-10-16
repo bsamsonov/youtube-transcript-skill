@@ -18,7 +18,7 @@ not blocked.
 Requires [uv](https://docs.astral.sh/uv/) (dependencies install themselves on first run).
 
 ```bash
-git clone https://github.com/borissamsonov77/youtube-transcript-skill.git
+git clone https://github.com/bsamsonov/youtube-transcript-skill.git
 ln -s "$PWD/youtube-transcript-skill/skills/youtube-transcript" ~/.claude/skills/youtube-transcript
 ```
 
