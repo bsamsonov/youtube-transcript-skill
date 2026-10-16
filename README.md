@@ -18,7 +18,7 @@ not blocked.
 Requires [uv](https://docs.astral.sh/uv/) (dependencies install themselves on first run).
 
 ```bash
-git clone https://github.com/<you>/youtube-transcript-skill.git
+git clone https://github.com/borissamsonov77/youtube-transcript-skill.git
 ln -s "$PWD/youtube-transcript-skill/skills/youtube-transcript" ~/.claude/skills/youtube-transcript
 ```
 
@@ -38,6 +38,18 @@ $S status ~/youtube_transcripts/<Channel>          # progress
 $S --proxy http://user:pass@host:port channel URL  # through a proxy
 ```
 
+Example (`video`):
+
+```markdown
+# По первым 90 секундам видно, возьмут тебя или нет
+
+- URL: https://www.youtube.com/watch?v=LhFe3U9XISw
+- Channel: Сергей про Карьеру
+- Transcript: ru (auto), ~12:59, 2051 words
+
+[0:00] Собеседование идёт целый час, а решение о тебе формируется буквально за первые полторы минуты…
+```
+
 Channel output: `transcripts/<video_id>.md`, `index.csv`, `ALL_TRANSCRIPTS.md`
 (oldest first), plus `state.json` / `videos.json` used to resume.
 
@@ -51,6 +63,14 @@ Channel output: `transcripts/<video_id>.md`, `index.csv`, `ALL_TRANSCRIPTS.md`
   at a modest pace, and respect the authors' rights to the content.
 - Videos without captions are reported as `no_transcript`; transcribing audio (Whisper)
   is out of scope.
+
+## Development
+
+```bash
+uv run --no-project --with pytest --with youtube-transcript-api --with yt-dlp pytest -q tests
+```
+
+Tests cover the offline logic (URL parsing, original-language selection, formatting).
 
 ## License
 
