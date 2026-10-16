@@ -59,9 +59,10 @@ picks up new uploads.
    ```bash
    mkdir -p ~/youtube_transcripts
    setsid nohup $YT channel "<channel or video url>" >> ~/youtube_transcripts/<slug>.log 2>&1 < /dev/null &
-   echo $!
    ```
-   Then start a background waiter (`run_in_background`) so you are notified at the end:
+   `setsid` forks, so `$!` is NOT the worker. After ~15 s read the log: its second line
+   names the folder, and `<folder>/run.pid` holds the worker PID. Then start a background
+   waiter (`run_in_background`) so you are notified at the end:
    `while kill -0 <PID> 2>/dev/null; do sleep 300; done; tail -5 <log>`
 2. Tell the user: folder, number of videos (first log lines), ETA, how to check
    progress, and that they can close the session.
