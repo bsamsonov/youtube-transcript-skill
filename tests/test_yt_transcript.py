@@ -12,16 +12,16 @@ spec.loader.exec_module(yt)
 
 
 @pytest.mark.parametrize("url", [
-    "LhFe3U9XISw",
-    "https://youtu.be/LhFe3U9XISw?si=AtKbPuHfPegTZABd",
-    "https://www.youtube.com/watch?v=LhFe3U9XISw&t=42s",
-    "https://m.youtube.com/watch?feature=share&v=LhFe3U9XISw",
-    "https://www.youtube.com/shorts/LhFe3U9XISw",
-    "https://www.youtube.com/live/LhFe3U9XISw",
-    "https://www.youtube.com/embed/LhFe3U9XISw",
+    "aircAruvnKk",
+    "https://youtu.be/aircAruvnKk?si=AbCdEfGhIjKlMnOp",
+    "https://www.youtube.com/watch?v=aircAruvnKk&t=42s",
+    "https://m.youtube.com/watch?feature=share&v=aircAruvnKk",
+    "https://www.youtube.com/shorts/aircAruvnKk",
+    "https://www.youtube.com/live/aircAruvnKk",
+    "https://www.youtube.com/embed/aircAruvnKk",
 ])
 def test_extract_video_id(url):
-    assert yt.extract_video_id(url) == "LhFe3U9XISw"
+    assert yt.extract_video_id(url) == "aircAruvnKk"
 
 
 def test_extract_video_id_rejects_channel():
@@ -78,4 +78,4 @@ def test_fmt_ts():
 
 
 def test_slugify_keeps_unicode():
-    assert yt.slugify("Сергей про Карьеру!") == "Сергей_про_Карьеру"
+    assert yt.slugify("Café Olé: Tech Talks!") == "Café_Olé_Tech_Talks"

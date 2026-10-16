@@ -24,16 +24,16 @@ ln -s "$PWD/youtube-transcript-skill/skills/youtube-transcript" ~/.claude/skills
 
 ## Use from Claude Code
 
-- `о чём этот ролик? https://youtu.be/LhFe3U9XISw`
-- `скачай транскрипты всех роликов автора https://youtu.be/LhFe3U9XISw`
+- `what is this video about? https://youtu.be/aircAruvnKk`
+- `download transcripts of all videos of this channel: https://www.youtube.com/@3blue1brown`
 - `what's the status of the channel download?`
 
 ## Use directly
 
 ```bash
 S=skills/youtube-transcript/scripts/yt_transcript.py
-$S video https://youtu.be/LhFe3U9XISw              # Markdown to stdout
-$S channel https://youtu.be/LhFe3U9XISw            # whole channel -> ~/youtube_transcripts/<Channel>/
+$S video https://youtu.be/aircAruvnKk              # Markdown to stdout
+$S channel https://youtu.be/aircAruvnKk            # whole channel -> ~/youtube_transcripts/<Channel>/
 $S status ~/youtube_transcripts/<Channel>          # progress
 $S --proxy http://user:pass@host:port channel URL  # through a proxy
 ```
@@ -41,13 +41,13 @@ $S --proxy http://user:pass@host:port channel URL  # through a proxy
 Example (`video`):
 
 ```markdown
-# По первым 90 секундам видно, возьмут тебя или нет
+# But what is a neural network? | Deep learning chapter 1
 
-- URL: https://www.youtube.com/watch?v=LhFe3U9XISw
-- Channel: Сергей про Карьеру
-- Transcript: ru (auto), ~12:59, 2051 words
+- URL: https://www.youtube.com/watch?v=aircAruvnKk
+- Channel: 3Blue1Brown
+- Transcript: en (manual), ~18:25, 3357 words
 
-[0:00] Собеседование идёт целый час, а решение о тебе формируется буквально за первые полторы минуты…
+[0:04] This is a 3. It's sloppily written and rendered at an extremely low resolution of 28x28 pixels, but your brain has no trouble recognizing it as a 3…
 ```
 
 Channel output: `transcripts/<video_id>.md`, `index.csv`, `ALL_TRANSCRIPTS.md`
