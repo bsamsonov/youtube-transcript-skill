@@ -1,17 +1,10 @@
 ---
 name: youtube-transcript
-description: |
-  Gets YouTube transcripts without API keys: one video (to answer "what is this video
-  about?") or every video of a channel (bulk, slow and polite so the IP is not blocked,
-  runs in the background, resumable). Picks the language actually spoken in the video,
-  not YouTube's machine translation.
-  Use when the user sends a YouTube link (youtube.com, youtu.be) and asks what it is
-  about, to summarize it, retell it, or to get its transcript/subtitles; or asks to
-  download transcripts of all videos of a channel/author for later analysis.
-  Triggers: "о чём этот ролик", "о чём видео", "перескажи ролик", "кратко о видео",
-  "транскрипт ролика", "субтитры", "скачай все транскрипты канала", "все ролики автора",
-  "what is this video about", "summarize this YouTube video", "get transcript",
-  "download all transcripts of the channel".
+description: >-
+  YouTube transcripts without API keys, in the language actually spoken (not YouTube's
+  machine translation): one video, or every video of a channel (slow, background,
+  resumable). Use for youtube.com / youtu.be links: «о чём видео», «перескажи ролик»,
+  «транскрипт/субтитры», «скачай все транскрипты канала».
 ---
 
 # YouTube transcripts
